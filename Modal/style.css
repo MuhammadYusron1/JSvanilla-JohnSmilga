@@ -1,0 +1,242 @@
+/* ===================================
+Variables
+=================================== */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+:root {
+    /* Color Variables */
+    --color-primary-lighter3: #BBDEF7;
+    --color-primary-lighter2: #A4D2F4;
+    --color-primary-lighter1: #8EC8F1;
+    --color-primary-light: #77BCEE;
+    --color-primary: #49A6E9;
+    --color-primary-dark: #1C90E3;
+    --color-primary-darker1: #1981CD;
+    --color-primary-darker2: #1673B6;
+    --color-primary-darker3: #13659F;
+    --color-secondary-lighter: #1A1AFF;
+    --color-secondary-light: #0000FF;
+    --color-secondary: #0000CC;
+    --color-secondary-dark: #000099;
+    --color-secondary-darker: #000080;
+    --color-gray-1: #181818;
+    --color-gray-2: #303030;
+    --color-gray-3: #484848;
+    --color-gray-4: #606060;
+    --color-gray-5: #787878;
+    --color-gray-6: #909090;
+    --color-gray-7: #A8A8A8;
+    --color-gray-8: #C0C0C0;
+    --color-gray-9: #D8D8D8;
+    --color-gray-10: #F0F0F0;
+    --color-black: black;
+    --color-white: white;
+    --color-green: green;
+    --color-red: rgba(255, 0, 0, 0.702);
+    /* Spacing Variables */
+    --spacing-small: .25rem;
+    --spacing-medium: .5rem;
+    --spacing-large: .75rem;
+    --spacing-x-large: 1.25rem;
+    /* Duration Variables */
+    --duration-paused: paused;
+    --duration-slow: 3s;
+    --duration-fast: 500ms;
+    /* Transition Variables */
+    --easing-fast: all 0.3s linear;
+    --easing-easeInSine: cubic-bezier(0.12, 0, 0.39, 0);
+    --easing-easeOutSine: cubic-bezier(0.61, 1, 0.88, 1)500ms;
+    /* Radius Variables */
+    --radius-circle: 1rem;
+    --radius-large: .5rem;
+    --radius-small: .1rem;
+    /* Opacity Variables */
+    --opacity-opacity-25: 0.25;
+    --opacity-opacity-50: 0.5;
+    --opacity-opacity-75: 0.75;
+    /* Shadow Variables */
+    --shadow-level-1: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --shadow-level-2: 0 5px 15px rgba(0, 0, 0, 0.2);
+    /* Media Query Variables */
+    --media-query-phone: 576px;
+    --media-query-tablet: 768px;
+    --media-query-desktop-small: 992px;
+    --media-query-desktop-large: 1200px;
+    /* Font Variables */
+    --font-family-primary: "Roboto", sans-serif;
+    --font-family-secondary: "Open Sans", sans-serif;
+    --letter-spacing-dense: -1px;
+    --letter-spacing-double: 2px;
+    --letter-spacing-double2: 4px;
+    --line-height-heading: 1.25;
+    --line-height-reset: 1;
+    --line-height-text: 1.5
+}
+
+/* ===================================
+Global Styles
+=================================== */
+*, *::after, *::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: var(--font-family-secondary);
+    background: linear-gradient(to right, #834d9b, #d04ed6);
+    color: var(--color-gray-1);
+    line-height: var(--line-height-text);
+    font-size: .875rem;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+h1, h2, h3, h4 {
+    letter-spacing: var(--letter-spacing-double);
+    text-transform: capitalize;
+    line-height: var(--line-height-heading);
+    margin-bottom: var(--spacing-large);
+    font-family: var(--font-family-primary);
+}
+
+h1 {
+    font-size: calc(2.5rem + 1.5vw);
+}
+
+h2 {
+    font-size: calc(1.5rem + .9vw);
+}
+
+h3 {
+    font-size: calc(1rem + .6vw);
+}
+
+h4 {
+    font-size: calc(.6rem + .3vw);
+}
+
+p {
+    margin-bottom: 1rem;
+    color: var(--color-gray-5);
+}
+
+@media screen and (min-width: 768px) /* for tablet */ {
+    body {
+        font-size: 1rem;
+    }
+
+    h1, h2, h3, h4 {
+        line-height: var(--line-height-reset);
+    }
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    h3 {
+        font-size: 1.75rem;
+    }
+
+    h4 {
+        font-size: 1rem;
+    }
+}
+
+/* ===================================
+Modal
+=================================== */
+/* .btn {
+    color: #585858;
+    text-shadow: 1px 1px 0px #FFFFFF;
+    box-shadow: 1px 1px 1px #BEE2F9;
+    font-size: 1rem;
+    padding: 1rem 2rem;
+    border-radius: var(--radius-large);
+    border: 1px solid #303030;
+    background: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+
+}
+
+.btn:hover {
+    color: #F0F0F0;
+    background: #D04ED6;
+} */
+
+.wrapper {
+    height:100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-button {
+    font-size: 1rem;
+    color: #585858;
+    text-shadow: 1px 1px 0px #FFFFFF;
+    box-shadow: 1px 1px 1px #BEE2F9;
+    padding: 1rem 2rem;
+    border-radius: var(--radius-large);
+    border: 1px solid #303030;
+    background: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.modal-button:hover {
+    color: #F0F0F0;
+    background: #D04ED6;
+}
+
+.modal {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(77, 77, 77, .7);
+    transition: all .4s;
+}
+
+.modal:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-content {
+    border-radius: var(--radius-large);
+    position: relative;
+    width: 500px;
+    max-width: 90%;
+    background-color: #fff;
+    padding: 1em 2em;
+}
+
+.modal-footer {
+    text-align: right;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #585858;
+    text-decoration: none;
+}
