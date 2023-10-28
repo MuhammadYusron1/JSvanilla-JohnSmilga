@@ -1,0 +1,290 @@
+/* ===================================
+Variables
+=================================== */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+:root {
+    /* Color Variables */
+    --color-primary-lighter: #8EC8F1;
+    --color-primary-light: #77BCEE;
+    --color-primary: #49A6E9;
+    --color-primary-dark: #1C90E3;
+    --color-primary-darker: #1982CC;
+    --color-secondary-lighter: #1A1AFF;
+    --color-secondary-light: #0000FF;
+    --color-secondary: #0000CC;
+    --color-secondary-dark: #000099;
+    --color-secondary-darker: #000080;
+    --color-gray-1: #181818;
+    --color-gray-2: #303030;
+    --color-gray-3: #484848;
+    --color-gray-4: #606060;
+    --color-gray-5: #787878;
+    --color-gray-6: #909090;
+    --color-gray-7: #A8A8A8;
+    --color-gray-8: #C0C0C0;
+    --color-gray-9: #D8D8D8;
+    --color-gray-10: #F0F0F0;
+    --color-black: black;
+    --color-white: white;
+    --color-green: green;
+    --color-red: red;
+    /* Spacing Variables */
+    --spacing-small: .25rem;
+    --spacing-medium: .5rem;
+    --spacing-large: .75rem;
+    --spacing-x-large: 1.25rem;
+    /* Duration Variables */
+    --duration-paused: paused;
+    --duration-slow: 3s;
+    --duration-fast: 500ms;
+    /* Transition Variables */
+    --easing-fast: all 0.3s linear;
+    --easing-easeInSine: cubic-bezier(0.12, 0, 0.39, 0);
+    --easing-easeOutSine: cubic-bezier(0.61, 1, 0.88, 1)500ms;
+    /* Radius Variables */
+    --radius-circle: 1rem;
+    --radius-large: 0.5rem;
+    --radius-small: 0.1rem;
+    /* Opacity Variables */
+    --opacity-opacity-25: 0.25;
+    --opacity-opacity-50: 0.5;
+    --opacity-opacity-75: 0.75;
+    /* Shadow Variables */
+    --shadow-level-1: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --shadow-level-2: 0 5px 15px rgba(0, 0, 0, 0.2);
+    /* Media Query Variables */
+    --media-query-phone: 576px;
+    --media-query-tablet: 768px;
+    --media-query-desktop-small: 992px;
+    --media-query-desktop-large: 1200px;
+    /* Font Variables */
+    --font-family-primary: "Roboto", sans-serif;
+    --font-family-secondary: "Open Sans", sans-serif;
+    --line-height-heading: 1.25;
+    --line-height-reset: 1;
+    --line-height-text: 1.5
+}
+
+/* ===================================
+Global Styles
+=================================== */
+*, ::after, ::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family-secondary);
+    background-color: hsl(210, 36%, 96%);
+    color: var(--color-gray-1);
+    line-height: var(--line-height-text);
+    font-size: 0.875rem;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4 {
+    letter-spacing: var(--spacing-small);
+    text-transform: capitalize;
+    line-height: var(--line-height-heading);
+    margin-bottom: .75rem;
+    font-family: var(--font-family-primary);
+}
+
+h1 {
+    /* font-size: 3rem; */
+    font-size: calc(2.5rem + 1.5vw);
+}
+
+h2 {
+    /* font-size: 2rem; */
+    font-size: calc(1.5rem + 0.9vw);
+}
+
+h3 {
+    /* font-size: 1.25rem; */
+    font-size: calc(1rem + 0.6vw);
+}
+
+h4 {
+    /* font-size: 0.875rem; */
+    font-size: calc(0.6rem + 0.3vw);
+}
+
+p {
+    margin-bottom: 1rem;
+    color: var(--color-gray-5);
+}
+
+@media screen and (min-width: 768px /*for tablet*/) {
+    body {
+        font-size: 1rem;
+    }
+    h1, h2, h3, h4 {
+        line-height: var(--line-height-reset);
+    }
+    
+    h1 {
+        font-size: 4rem;
+    }
+    
+    h2 {
+        font-size: 2.5rem;
+    }
+    
+    h3 {
+        font-size: 1.75rem;
+    }
+    
+    h4 {
+        font-size: 1rem;
+    }
+}
+
+/* Global Classes */
+
+.btn {
+    display: inline-block;
+    padding: .25rem .5rem;
+    font-size: .875rem;
+    background-color: transparent;
+    color: var(--color-black);
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    text-transform: capitalize;
+    cursor: pointer;
+    user-select: none;
+    border: 2px solid var(--color-black);
+    border-radius: var(--radius-large);
+    transition: var(--easing-fast);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    /* letter-spacing: var(--spacing-small); */
+    /* margin: .5rem; */
+}
+
+.btn:hover {
+    color: var(--color-white);
+    background: var(--color-black);
+}
+
+/*
+=============== 
+Reviews         RUSAK KABEH
+===============
+*/
+main {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+.title {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+.underline {
+    height: 0.25rem;
+    width: 5rem;
+    background: var(--color-primary);
+    margin: auto auto;
+}
+.container {
+    width: 80vw;
+    max-width: var(--media-query-phone);
+}
+.review {
+    background: var(--color-white);
+    padding: 1.5rem 2rem;
+    border-radius: var(--radius-large);
+    box-shadow: var(--shadow-level-1);
+    transition: var(--easing-fast);
+    text-align: center;
+}
+.review:hover {
+    box-shadow: var(--shadow-level-2);
+}
+.image-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-bottom: 1.5rem;
+}
+#person-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    position: relative;
+}
+.image-container::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    transform: translateY(25%);
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+.image-container::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: var(--color-primary);
+    position: absolute;
+    top: -0.25rem;
+    right: -0.5rem;
+    border-radius: 50%;
+}
+#author {
+    margin-bottom: 0.25rem;
+}
+#job {
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    font-size: 0.85rem;
+}
+#info {
+    margin-bottom: 0.75rem;
+}
+.prev-button,
+.next-button {
+    color: var(--color-primary);
+    font-size: 1.25rem;
+    background: transparent;
+    border-color: transparent;
+    margin: 0 0.5rem;
+    transition: var(--easing-fast);
+    cursor: pointer;
+}
+.prev-button:hover,
+.next-button:hover {
+    color: var(--color-primary-darker);
+}
+
+.random-button {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    margin-top: .5rem;
+}
+
+.random-button:hover {
+    background-color: var(--color-primary);
+    color: var(--color-gray-1);
+}
